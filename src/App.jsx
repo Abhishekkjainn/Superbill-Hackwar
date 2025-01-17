@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import './App.css';
-import Header from './components/header';
 
 function App() {
   return (
     <>
-      <Header />
+      <h1>Super-Vendor Coming Soon</h1>
+      <br />
+      <h3>
+        A Product of <b>Super-Bill</b>
+      </h3>
     </>
   );
 }
