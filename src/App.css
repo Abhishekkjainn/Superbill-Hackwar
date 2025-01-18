@@ -3,19 +3,24 @@ body{
   padding: 0;
   font-family: 'DM Sans';
 }
+::-webkit-scrollbar{
+  width: 3px;
+  
+}
 .header{
   width: 100%;
   height: 60px;
-  /* border-bottom: 1px solid rgb(232, 232, 232); */
+  border-bottom: 1px solid rgb(232, 232, 232);
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  background-color: rgba(255, 255, 255, 0.519);
-  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 1);
+  backdrop-filter: blur(20px);
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 100;
 }
 .company{
   width: 25%;
@@ -116,10 +121,62 @@ body{
   align-items: center;
   flex-direction: column;
 }
-.filter{
+/* .filter{
   width: 90%;
   height: 30px;
   
+} */
+.companyinfo{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.companyinformation{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.companynames{
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-direction: column;
+  margin-left: 20px;
+}
+.filters{
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.analyticscompany{
+  font-size: 22px;
+  font-weight: 600;
+  color: black;
+}
+.ownertag{
+  border: 1px solid grey;
+  border-radius: 40px;
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ownerimg{
+  width: 20px;
+  border-radius: 50%;
+}
+.ownername{
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+.analyticslogo{
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
 }
 .analytics{
   margin-top: 20px;
@@ -193,6 +250,49 @@ body{
   justify-content: center;
   align-items: center;
 }
+.secondrow{
+  width: 93%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+.billhistory{
+  width: 48%;
+  height: 400px;
+  background-color: rgb(226, 226, 226);
+  border-radius: 20px;
+  margin-top: 20px;
+  margin: 1%;
+}
+.inventorysuggestions{
+  width: 48%;
+  height: 400px;
+  background-color: rgb(0, 47, 255);
+  border-radius: 20px;
+  margin-top: 20px;
+  margin: 1%;
+}
+.cardhead{
+  font-size: 38px;
+  font-weight: 500;
+  color: rgb(61, 61, 61);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 900px){
   .header{
@@ -334,6 +434,60 @@ body{
     color: grey;
     font-weight: 600;
     font-size: 14px;
+  }
+
+
+  .companyinfo{
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .companyinformation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .companynames{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: column;
+    margin-left: 10px;
+  }
+  .filters{
+    font-weight: 500;
+    font-size: 8px;
+  }
+  
+  .analyticscompany{
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+  }
+  .analyticslogo{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+  }
+  .ownertag{
+    border: 1px solid grey;
+    border-radius: 40px;
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .ownerimg{
+    width: 12px;
+    border-radius: 50%;
+  }
+  .ownername{
+    font-size: 8px;
+    font-weight: 500;
+    margin-left: 4px;
+    margin-right: 4px;
   }
   
 }
