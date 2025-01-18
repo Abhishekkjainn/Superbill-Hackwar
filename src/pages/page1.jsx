@@ -2,17 +2,6 @@ import { useState } from 'react';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import React, { PureComponent } from 'react';
-// import {
-//   BarChart,
-//   Bar,
-//   XAxis,
-//   YAxis,
-//   CartesianGrid,
-//   Tooltip,
-//   Legend,
-//   ResponsiveContainer,
-//   Rectangle,
-// } from 'recharts';
 
 import {
   AreaChart,
@@ -26,40 +15,236 @@ import {
 } from 'recharts';
 
 export default function Page1() {
-  const bills = [
+  const mockBills = [
     {
-      id: 'B001',
-      customer: 'John Doe',
-      totalAmount: 5000,
-      paymentStatus: 'Paid',
-      date: 'Jan 15, 2025',
-      items: 3,
-    },
-    {
-      id: 'B002',
-      customer: 'Jane Smith',
-      totalAmount: 8000,
-      paymentStatus: 'Pending',
-      date: 'Jan 17, 2025',
-      items: 4,
-    },
-    {
-      id: 'B003',
-      customer: 'Carlos Santana',
-      totalAmount: 15000,
-      paymentStatus: 'Paid',
-      date: 'Jan 18, 2025',
-      items: 6,
-    },
-    {
-      id: 'B004',
-      customer: 'Emily Johnson',
-      totalAmount: 10000,
-      paymentStatus: 'Overdue',
-      date: 'Jan 16, 2025',
+      billId: '1012025',
+      phoneNumber: '9876543210',
       items: 5,
+      totalAmount: '₹1500',
+      paymentMode: 'UPI',
+    },
+    {
+      billId: '1012026',
+      phoneNumber: '9876543211',
+      items: 3,
+      totalAmount: '₹850',
+      paymentMode: 'Cash',
+    },
+    {
+      billId: '1012027',
+      phoneNumber: '9876543212',
+      items: 7,
+      totalAmount: '₹2100',
+      paymentMode: 'Card',
+    },
+    {
+      billId: '1012028',
+      phoneNumber: '9876543213',
+      items: 4,
+      totalAmount: '₹1200',
+      paymentMode: 'UPI',
+    },
+    {
+      billId: '1012029',
+      phoneNumber: '9876543214',
+      items: 6,
+      totalAmount: '₹1800',
+      paymentMode: 'Cash',
+    },
+    {
+      billId: '1012030',
+      phoneNumber: '9876543215',
+      items: 2,
+      totalAmount: '₹500',
+      paymentMode: 'Card',
+    },
+    {
+      billId: '1012031',
+      phoneNumber: '9876543216',
+      items: 9,
+      totalAmount: '₹3500',
+      paymentMode: 'UPI',
+    },
+    {
+      billId: '1012032',
+      phoneNumber: '9876543217',
+      items: 1,
+      totalAmount: '₹200',
+      paymentMode: 'Cash',
+    },
+    {
+      billId: '1012033',
+      phoneNumber: '9876543218',
+      items: 8,
+      totalAmount: '₹2700',
+      paymentMode: 'Card',
+    },
+    {
+      billId: '1012034',
+      phoneNumber: '9876543219',
+      items: 3,
+      totalAmount: '₹750',
+      paymentMode: 'UPI',
+    },
+    {
+      billId: '1012035',
+      phoneNumber: '9876543220',
+      items: 4,
+      totalAmount: '₹1400',
+      paymentMode: 'Cash',
+    },
+    {
+      billId: '1012036',
+      phoneNumber: '9876543221',
+      items: 5,
+      totalAmount: '₹1600',
+      paymentMode: 'Card',
+    },
+    {
+      billId: '1012037',
+      phoneNumber: '9876543222',
+      items: 6,
+      totalAmount: '₹1950',
+      paymentMode: 'UPI',
+    },
+    {
+      billId: '1012038',
+      phoneNumber: '9876543223',
+      items: 7,
+      totalAmount: '₹2300',
+      paymentMode: 'Cash',
+    },
+    {
+      billId: '1012039',
+      phoneNumber: '9876543224',
+      items: 2,
+      totalAmount: '₹600',
+      paymentMode: 'Card',
+    },
+    {
+      billId: '1012040',
+      phoneNumber: '9876543225',
+      items: 8,
+      totalAmount: '₹3200',
+      paymentMode: 'UPI',
+    },
+    {
+      billId: '1012041',
+      phoneNumber: '9876543226',
+      items: 1,
+      totalAmount: '₹150',
+      paymentMode: 'Cash',
+    },
+    {
+      billId: '1012042',
+      phoneNumber: '9876543227',
+      items: 9,
+      totalAmount: '₹4000',
+      paymentMode: 'Card',
+    },
+    {
+      billId: '1012043',
+      phoneNumber: '9876543228',
+      items: 10,
+      totalAmount: '₹5000',
+      paymentMode: 'UPI',
+    },
+    {
+      billId: '1012044',
+      phoneNumber: '9876543229',
+      items: 3,
+      totalAmount: '₹950',
+      paymentMode: 'Cash',
+    },
+    {
+      billId: '1012045',
+      phoneNumber: '9876543230',
+      items: 5,
+      totalAmount: '₹2200',
+      paymentMode: 'Card',
+    },
+    {
+      billId: '1012046',
+      phoneNumber: '9876543231',
+      items: 4,
+      totalAmount: '₹1700',
+      paymentMode: 'UPI',
+    },
+    {
+      billId: '1012047',
+      phoneNumber: '9876543232',
+      items: 2,
+      totalAmount: '₹550',
+      paymentMode: 'Cash',
+    },
+    {
+      billId: '1012048',
+      phoneNumber: '9876543233',
+      items: 6,
+      totalAmount: '₹2800',
+      paymentMode: 'Card',
+    },
+    {
+      billId: '1012049',
+      phoneNumber: '9876543234',
+      items: 1,
+      totalAmount: '₹300',
+      paymentMode: 'UPI',
+    },
+    {
+      billId: '1012050',
+      phoneNumber: '9876543235',
+      items: 7,
+      totalAmount: '₹3100',
+      paymentMode: 'Cash',
+    },
+    {
+      billId: '1012051',
+      phoneNumber: '9876543236',
+      items: 8,
+      totalAmount: '₹3500',
+      paymentMode: 'Card',
+    },
+    {
+      billId: '1012052',
+      phoneNumber: '9876543237',
+      items: 9,
+      totalAmount: '₹4500',
+      paymentMode: 'UPI',
+    },
+    {
+      billId: '1012053',
+      phoneNumber: '9876543238',
+      items: 3,
+      totalAmount: '₹800',
+      paymentMode: 'Cash',
+    },
+    {
+      billId: '1012054',
+      phoneNumber: '9876543239',
+      items: 4,
+      totalAmount: '₹1300',
+      paymentMode: 'Card',
     },
   ];
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filteredBills, setFilteredBills] = useState(mockBills);
+
+  const handleSearch = (event) => {
+    const query = event.target.value.toLowerCase();
+    setSearchQuery(query);
+
+    // Filter bills based on search query
+    const filtered = mockBills.filter(
+      (bill) =>
+        bill.billId.toLowerCase().includes(query) ||
+        bill.phoneNumber.includes(query) ||
+        bill.items.toString().includes(query) ||
+        bill.totalAmount.toLowerCase().includes(query) ||
+        bill.paymentMode.toLowerCase().includes(query)
+    );
+    setFilteredBills(filtered);
+  };
 
   const inventorydata = [
     { month: 'January', totalInventoryValue: 105000 },
@@ -146,6 +331,16 @@ export default function Page1() {
     'All Time',
   ];
 
+  const billdateoptions = [
+    'Today',
+    'This Week',
+    'This Month',
+    'Last 3 Months',
+    'Last 6 Months',
+    'Last Year',
+    'All Time',
+  ];
+
   const graphoptions = [
     'Inventory Value',
     'Bills Generated',
@@ -155,8 +350,10 @@ export default function Page1() {
   ];
   const defaultOption = options[0];
   const defaultGraphOption = graphoptions[0];
+  const defaultBillOption = billdateoptions[0];
   const [selectedOption, setSelectedOption] = useState(defaultOption);
   const [selectedgraphoption, setGraphOption] = useState(defaultGraphOption);
+  const [selectedbillDate, setBillDate] = useState(defaultBillOption);
 
   const handleSelect = (option) => {
     setSelectedOption(option.value);
@@ -166,9 +363,11 @@ export default function Page1() {
     setGraphOption(option.value);
     console.log('Selected:', option.value); // For debugging
   };
-  const customBlue = '#4A90E2'; // Main blue color
-  const hoverEffect = '#285A99'; // Darker blue for hover effect
-  const barRadius = [10, 10, 0, 0];
+
+  const handlebillSelect = (option) => {
+    setBillDate(option.value);
+    console.log('Selected:', option.value); // For debugging
+  };
 
   var totalitems = 150;
   var totalSoldtoday = 60;
@@ -266,7 +465,7 @@ export default function Page1() {
               />
             </div>
           </div>
-          <ResponsiveContainer width="100%" height="75%">
+          <ResponsiveContainer width="100%" height="75%" className="graphgraph">
             <AreaChart
               width={500}
               height={300}
@@ -357,6 +556,7 @@ export default function Page1() {
                 <img
                   src="/billicon.png"
                   alt="Graph Icon"
+                  a
                   className="graphiconimg"
                 />
               </div>
@@ -367,17 +567,119 @@ export default function Page1() {
             </div>
             <div className="selectors">
               <Dropdown
-                options={graphoptions}
-                onChange={handlegraphSelect}
-                value={selectedgraphoption}
+                options={billdateoptions}
+                onChange={handlebillSelect}
+                value={selectedbillDate}
                 placeholder="Select an option"
                 className="filters"
               />
             </div>
           </div>
-          <div className="bills"></div>
+          <div className="search-container">
+            <input
+              type="text"
+              placeholder="Search by Bill ID, Phone, Items, or Payment Mode"
+              value={searchQuery}
+              onChange={handleSearch}
+              className="search-input"
+            />
+          </div>
+          <div className="bills">
+            <div className="bill">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Bill ID</th>
+                    <th>Customer Phone Number</th>
+                    <th>Items</th>
+                    <th>Total Bill Amount</th>
+                    <th>Payment Mode</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filteredBills.map((bill, index) => (
+                    <tr key={index}>
+                      <td>{bill.billId}</td>
+                      <td>{bill.phoneNumber}</td>
+                      <td>{bill.items} items</td>
+                      <td>{bill.totalAmount}</td>
+                      <td>{bill.paymentMode}</td>
+                      <td>
+                        <a href="#" className="view-details">
+                          View Details
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
+}
+
+{
+  /* <div className="recentbills">
+          <div className="graphinfo2">
+            <div className="graphheads">
+              <div className="graphicon">
+                <img
+                  src="/billicon.png"
+                  alt="Graph Icon"
+                  className="graphiconimg"
+                />
+              </div>
+              <div className="graphheading">
+                <div className="fixedhead">Recent Bills.</div>
+                <div className="variablehead">Bills Generated Recently</div>
+              </div>
+            </div>
+            <div className="selectors">
+              <Dropdown
+                options={billdateoptions}
+                onChange={handlebillSelect}
+                value={selectedbillDate}
+                placeholder="Select an option"
+                className="filters"
+              />
+            </div>
+          </div>
+          <div className="bills">
+            <div className="inp"></div>
+            <div className="bill">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Bill ID</th>
+                    <th>Customer Phone Number</th>
+                    <th>Items</th>
+                    <th>Total Bill Amount</th>
+                    <th>Payment Mode</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {mockBills.map((bill, index) => (
+                    <tr key={index}>
+                      <td>{bill.billId}</td>
+                      <td>{bill.phoneNumber}</td>
+                      <td>{bill.items} items</td>
+                      <td>{bill.totalAmount}</td>
+                      <td>{bill.paymentMode}</td>
+                      <td>
+                        <a href="#" className="view-details">
+                          View Details
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div> */
 }
