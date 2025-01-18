@@ -86,6 +86,21 @@ export default function Page1() {
     { month: 'December', totalSales: 200000 },
   ];
 
+  const profitdata = [
+    { month: 'January', totalProfit: 10000 },
+    { month: 'February', totalProfit: 815000 },
+    { month: 'March', totalProfit: 1400 },
+    { month: 'April', totalProfit: 10000 },
+    { month: 'May', totalProfit: 20000 },
+    { month: 'June', totalProfit: 15000 },
+    { month: 'July', totalProfit: 10000 },
+    { month: 'August', totalProfit: 9000 },
+    { month: 'September', totalProfit: 5150000 },
+    { month: 'October', totalProfit: 125000 },
+    { month: 'November', totalProfit: 50000 },
+    { month: 'December', totalProfit: 40000 },
+  ];
+
   const options = [
     'Today',
     'This Week',
@@ -100,7 +115,8 @@ export default function Page1() {
     'Inventory Value',
     'Bills Generated',
     'Transactions',
-    'Total Sales',
+    'Sales Value',
+    'Profit Value',
   ];
   const defaultOption = options[0];
   const defaultGraphOption = graphoptions[0];
@@ -202,7 +218,7 @@ export default function Page1() {
               </div>
               <div className="graphheading">
                 <div className="fixedhead">Graphs And Analysis.</div>
-                <div className="variablehead">Total Inventory</div>
+                <div className="variablehead">Total {selectedgraphoption}</div>
               </div>
             </div>
             <div className="selectors">
@@ -226,6 +242,8 @@ export default function Page1() {
                   ? billdata
                   : selectedgraphoption === 'Transactions'
                   ? transactiondata
+                  : selectedgraphoption === 'Profit Value'
+                  ? profitdata
                   : salesdata
               }
               margin={{
@@ -284,6 +302,8 @@ export default function Page1() {
                     ? 'totalBillsGenerated'
                     : selectedgraphoption === 'Transactions'
                     ? 'totalTransactions'
+                    : selectedgraphoption === 'Profit Value'
+                    ? 'totalProfit'
                     : 'totalSales'
                 }
                 stroke="#3B74C1" // Darker blue for the stroke
@@ -295,27 +315,34 @@ export default function Page1() {
             </AreaChart>
           </ResponsiveContainer>
         </div>
-        <div className="recentbills"></div>
+        <div className="recentbills">
+          <div className="graphinfo">
+            <div className="graphheads">
+              <div className="graphicon">
+                <img
+                  src="/billicon.png"
+                  alt="Graph Icon"
+                  className="graphiconimg"
+                />
+              </div>
+              <div className="graphheading">
+                <div className="fixedhead">Recent Bills.</div>
+                <div className="variablehead">Bills Generated Recently</div>
+              </div>
+            </div>
+            <div className="selectors">
+              <Dropdown
+                options={graphoptions}
+                onChange={handlegraphSelect}
+                value={selectedgraphoption}
+                placeholder="Select an option"
+                className="filters"
+              />
+            </div>
+          </div>
+          <div className="bills"></div>
+        </div>
       </div>
     </div>
   );
 }
-
-// <ResponsiveContainer width="100%" height="90%">
-//             <AreaChart data={inventory}>
-//               <XAxis dataKey="month" tick={{ fontSize: '10px' }} />
-//               <YAxis tick={{ fontSize: '10px' }} />
-//               <CartesianGrid strokeDasharray={'5 5'} />
-//               <Legend />
-//               <Tooltip />
-//               <Area
-//                 dataKey="totalInventoryValue"
-//                 type={'bumpX'}
-//                 stroke="rgb(0, 47, 255)"
-//                 fill="rgba(0, 47, 255,0.5)"
-//                 fillOpacity={0.4}
-//                 strokeWidth={3}
-//                 margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
-//               />
-//             </AreaChart>
-//           </ResponsiveContainer>
