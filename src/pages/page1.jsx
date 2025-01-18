@@ -26,6 +26,41 @@ import {
 } from 'recharts';
 
 export default function Page1() {
+  const bills = [
+    {
+      id: 'B001',
+      customer: 'John Doe',
+      totalAmount: 5000,
+      paymentStatus: 'Paid',
+      date: 'Jan 15, 2025',
+      items: 3,
+    },
+    {
+      id: 'B002',
+      customer: 'Jane Smith',
+      totalAmount: 8000,
+      paymentStatus: 'Pending',
+      date: 'Jan 17, 2025',
+      items: 4,
+    },
+    {
+      id: 'B003',
+      customer: 'Carlos Santana',
+      totalAmount: 15000,
+      paymentStatus: 'Paid',
+      date: 'Jan 18, 2025',
+      items: 6,
+    },
+    {
+      id: 'B004',
+      customer: 'Emily Johnson',
+      totalAmount: 10000,
+      paymentStatus: 'Overdue',
+      date: 'Jan 16, 2025',
+      items: 5,
+    },
+  ];
+
   const inventorydata = [
     { month: 'January', totalInventoryValue: 105000 },
     { month: 'February', totalInventoryValue: 85000 },
@@ -316,7 +351,7 @@ export default function Page1() {
           </ResponsiveContainer>
         </div>
         <div className="recentbills">
-          <div className="graphinfo">
+          <div className="graphinfo2">
             <div className="graphheads">
               <div className="graphicon">
                 <img
