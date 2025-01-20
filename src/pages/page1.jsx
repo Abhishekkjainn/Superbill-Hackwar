@@ -618,7 +618,6 @@ export default function Page1() {
           </div>
         </div>
       </div>
-      <div className="inventory"></div>
     </div>
   );
 }

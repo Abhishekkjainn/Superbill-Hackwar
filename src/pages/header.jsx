@@ -11,26 +11,22 @@ export default function Header() {
         <div className="logotag">SuperVendor</div>
       </div>
       <div className="links">
-        <div className="link">
+        <Link to={'/'} className="link">
           <img src="/dashboard.png" alt="InventoryIcon" className="linkicon" />
           <div className="linktag">Dashboard</div>
-        </div>
-        <div className="link">
+        </Link>
+        <Link to={'/inventory'} className="link">
           <img src="/inventory.png" alt="InventoryIcon" className="linkicon" />
           <div className="linktag">Inventory</div>
-        </div>
-        <div className="link">
+        </Link>
+        <Link to={'/bills'} className="link">
           <img src="/bills.png" alt="InventoryIcon" className="linkicon" />
           <div className="linktag">Bills</div>
-        </div>
-        <div className="link">
-          <img
-            src="/transaction.png"
-            alt="InventoryIcon"
-            className="linkicon"
-          />
-          <div className="linktag">Transactions</div>
-        </div>
+        </Link>
+        <Link to={'/AISuggestions'} className="link">
+          <img src="/star.png" alt="InventoryIcon" className="linkicon" />
+          <div className="linktag">AI Suggestions</div>
+        </Link>
       </div>
       <div className="actions">
         <div className="buttons">
