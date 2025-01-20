@@ -343,7 +343,7 @@ export default function Inventory() {
                   </div>
                 </div>
                 <div className="sep"></div>
-                <div className="actions">
+                <div className="actionsinv">
                   <img src="/delete.png" alt="Delete" className="deleteicon" />
                   <img src="/edit.png" alt="Edit" className="deleteicon" />
                 </div>

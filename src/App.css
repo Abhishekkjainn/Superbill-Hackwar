@@ -631,7 +631,7 @@ table tr:hover {
   font-weight: 600;
   color: white;
 }
-.actions{
+.actionsinv{
   flex: 1;
   display: flex;
   justify-content: center;
@@ -1137,7 +1137,7 @@ table tr:hover {
     font-weight: 600;
     color: white;
   }
-  .actions{
+  .actionsinv{
     flex: 1;
     display: flex;
     justify-content: center;
