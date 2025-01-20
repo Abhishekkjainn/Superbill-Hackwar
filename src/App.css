@@ -490,12 +490,157 @@ table tr:hover {
   pointer-events: none;
   z-index: 1;
 }
+.products{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0px;
+}
+.inventoryitems {
+  width: 75%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start; 
+  align-items: center; 
+  background-color: #0f171a;
+  overflow-y: auto; 
+  border-radius: 20px;
+  margin-right: 15px;
+  padding-bottom: 2vh;
+}
+.inventoryitems > * {
+  flex-shrink: 0; 
+}
 
-
-
-
-
-
+.stockalertandinsights{
+  width: 25%;
+  height: 65vh;
+  background-color: aquamarine;
+}
+.productcard{
+  width: 96%;
+  height: 80px;
+  background-color: rgb(246, 246, 246);
+  background: linear-gradient(45deg,#141e22, #1a262d);
+  border-radius: 12px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 16px;
+  flex-shrink: none;
+}
+.productimage{
+  width: 60px;
+  height: 60px;
+  background-color: black;
+  border-radius: 6px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.productinfo{
+  width: 50%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.productname{
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+}
+.stockicon{
+  width: 12px;
+  margin-left: 4px;
+}
+.productstatus{
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 4px;
+}
+.smallcircle{
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: grey;
+  margin-right: 8px;
+}
+.prodcat{
+  color: grey;
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: 8px;
+}
+.stockcount{
+  color: rgb(215, 215, 215);
+  color: #39db7d;
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 8px;
+}
+.sep{
+  width:1px;
+  height: 40px;
+  background-color: #2e414d;
+}
+.productprice{
+  flex: 1;
+  height: 100%;
+  /* background-color: #39db7d; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buyingprice,.sellingprice{
+  /* background-color: #0f171a; */
+  height: 100%;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.buyinghead,.sellinghead{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.smallcirclegreen{
+  width: 4px;
+  height: 4px;
+  background-color: #39db7d;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+.buyingtext,.sellingtext{
+  font-size: 10px;
+  font-weight: 600;
+  color: #39db7d;
+}
+.buyingpriceamount,.sellingpriceamount{
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+}
+.actions{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.deleteicon{
+  width: 15px;
+  margin: 7px;
+}
 
 
 @media screen and (max-width: 900px){
@@ -512,6 +657,7 @@ table tr:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 100;
   }
   .company{
     width: 25%;
@@ -847,4 +993,168 @@ table tr:hover {
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
+
+
+
+  .products{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .inventoryitems {
+    width: 95%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start; 
+    align-items: center; 
+    background-color: #0f171a;
+    overflow-y: auto; 
+    border-radius: 20px;
+    margin-right: 0px;
+    padding-bottom: 2vh;
+  }
+  .inventoryitems > * {
+    flex-shrink: 0; 
+  }
+  
+  .stockalertandinsights{
+    width: 0%;
+    height: 0vh;
+    background-color: aquamarine;
+    display: none;
+  }
+  .productcard{
+    width: 96%;
+    height: 80px;
+    background-color: rgb(246, 246, 246);
+    background: linear-gradient(45deg,#141e22, #1a262d);
+    border-radius: 8px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 10px;
+    flex-shrink: none;
+  }
+  .productimage{
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+  .productinfo{
+    width: 55%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .productname{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 8px;
+    font-weight: 600;
+    color: white;
+  }
+  .stockicon{
+    width: 6px;
+    margin-left: 4px;
+  }
+  .productstatus{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 4px;
+  }
+  .smallcircle{
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: grey;
+    margin-right: 4px;
+  }
+  .prodcat{
+    color: grey;
+    font-size: 6px;
+    font-weight: 600;
+    margin-right: 3px;
+  }
+  .stockcount{
+    color: #39db7d;
+    font-size:6px;
+    font-weight: 600;
+    margin-left:3px;
+  }
+  .sep{
+    width:0px;
+    height: 40px;
+    background-color: #2e414d;
+  }
+  .productprice{
+    flex: 1;
+    height: 100%;
+    /* background-color: #39db7d; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .buyingprice,.sellingprice{
+    /* background-color: #0f171a; */
+    height: 100%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translateX(-6px);
+  }
+  .buyinghead,.sellinghead{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .smallcirclegreen{
+    width: 3px;
+    height: 3px;
+    background-color: #39db7d;
+    border-radius: 50%;
+    margin-right: 3px;
+}
+  .buyingtext,.sellingtext{
+    font-size: 4px;
+    font-weight: 600;
+    color: #39db7d;
+  }
+  .buyingpriceamount,.sellingpriceamount{
+    font-size: 6px;
+    font-weight: 600;
+    color: white;
+  }
+  .actions{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .deleteicon{
+    width: 8px;
+    margin: 4px;
+  }
+
+
+
+
+
+
+
+
+
 }
