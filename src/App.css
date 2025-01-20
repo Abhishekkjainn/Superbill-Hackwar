@@ -951,7 +951,8 @@ table tr:hover {
     align-items: flex-start; /* Align to the left */
     height: auto; /* Allow dynamic height */
     padding: 0px;
-    padding-bottom:12px;
+    margin-bottom: 12px;
+    z-index: 99;
   }
 
   .searchbar {
