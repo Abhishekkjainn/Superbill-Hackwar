@@ -618,68 +618,7 @@ export default function Page1() {
           </div>
         </div>
       </div>
+      <div className="inventory"></div>
     </div>
   );
-}
-
-{
-  /* <div className="recentbills">
-          <div className="graphinfo2">
-            <div className="graphheads">
-              <div className="graphicon">
-                <img
-                  src="/billicon.png"
-                  alt="Graph Icon"
-                  className="graphiconimg"
-                />
-              </div>
-              <div className="graphheading">
-                <div className="fixedhead">Recent Bills.</div>
-                <div className="variablehead">Bills Generated Recently</div>
-              </div>
-            </div>
-            <div className="selectors">
-              <Dropdown
-                options={billdateoptions}
-                onChange={handlebillSelect}
-                value={selectedbillDate}
-                placeholder="Select an option"
-                className="filters"
-              />
-            </div>
-          </div>
-          <div className="bills">
-            <div className="inp"></div>
-            <div className="bill">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Bill ID</th>
-                    <th>Customer Phone Number</th>
-                    <th>Items</th>
-                    <th>Total Bill Amount</th>
-                    <th>Payment Mode</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {mockBills.map((bill, index) => (
-                    <tr key={index}>
-                      <td>{bill.billId}</td>
-                      <td>{bill.phoneNumber}</td>
-                      <td>{bill.items} items</td>
-                      <td>{bill.totalAmount}</td>
-                      <td>{bill.paymentMode}</td>
-                      <td>
-                        <a href="#" className="view-details">
-                          View Details
-                        </a>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div> */
 }
