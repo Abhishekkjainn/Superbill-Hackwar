@@ -2,14 +2,14 @@ import { Link } from 'react-router-dom';
 export default function Header() {
   return (
     <div className="header">
-      <div className="company">
+      <Link to={'/'} className="company">
         <img
           src="superbill-blue.png"
           alt="Superbill Logo"
           className="mainlogo"
         />
         <div className="logotag">SuperVendor</div>
-      </div>
+      </Link>
       <div className="links">
         <Link to={'/'} className="link">
           <img src="/dashboard.png" alt="InventoryIcon" className="linkicon" />
