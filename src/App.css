@@ -950,7 +950,8 @@ table tr:hover {
     flex-direction: column-reverse; /* Stack search bar and categories */
     align-items: flex-start; /* Align to the left */
     height: auto; /* Allow dynamic height */
-    padding: 10px;
+    padding: 0px;
+    padding-bottom:12px;
   }
 
   .searchbar {
