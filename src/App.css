@@ -29,6 +29,7 @@ body{
   justify-content: start;
   align-items: center;
   text-decoration: none;
+  color: black;
 }
 .mainlogo{
   width: 28px;
@@ -643,6 +644,17 @@ table tr:hover {
   margin: 7px;
 }
 
+.no-products-placeholder{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: grey;
+  font-size: 18px;
+  font-weight: 600;
+}
+
 
 @media screen and (max-width: 900px){
   .header{
@@ -667,6 +679,7 @@ table tr:hover {
     justify-content: start;
     align-items: center;
     text-decoration: none;
+    color: black;
   }
   .mainlogo{
     width: 28px;
