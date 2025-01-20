@@ -1006,14 +1006,14 @@ table tr:hover {
   }
   .inventoryitems {
     width: 95%;
-    height: 80vh;
+    height: 75vh;
     display: flex;
     flex-direction: column;
     justify-content: start; 
     align-items: center; 
     background-color: #0f171a;
     overflow-y: auto; 
-    border-radius: 20px;
+    border-radius: 12px;
     margin-right: 0px;
     padding-bottom: 2vh;
   }
@@ -1029,7 +1029,7 @@ table tr:hover {
   }
   .productcard{
     width: 96%;
-    height: 80px;
+    height: 70px;
     background-color: rgb(246, 246, 246);
     background: linear-gradient(45deg,#141e22, #1a262d);
     border-radius: 8px;
