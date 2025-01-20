@@ -28,6 +28,7 @@ body{
   display: flex;
   justify-content: start;
   align-items: center;
+  text-decoration: none;
 }
 .mainlogo{
   width: 28px;
@@ -665,6 +666,7 @@ table tr:hover {
     display: flex;
     justify-content: start;
     align-items: center;
+    text-decoration: none;
   }
   .mainlogo{
     width: 28px;
