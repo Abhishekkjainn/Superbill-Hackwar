@@ -621,3 +621,24 @@ export default function Page1() {
     </div>
   );
 }
+
+// This is my Bill data I want you to do a good proper analysis on the bill data and give me really good and important metrics related to everything present in bill.
+// I want you to be pretty accurate and generate proper results.
+
+// can you provide this data to me in json format with all the headings as the key and all the texts as value
+
+// I want the analysis to be thorough and cover all the aspects possible with the billing data
+
+// {
+//   "1. Total Bills and Payment Modes": "The dataset contains 30 bills, each representing a unique transaction. Payment modes are distributed across three categories: UPI: 10 transactions (33.33%), Cash: 10 transactions (33.33%), Card: 10 transactions (33.33%). This reflects an even split in the preference for payment modes among customers.",
+//   "2. Total Revenue": "The cumulative revenue generated from all bills is ₹66,850. Breakdown of revenue by payment mode: UPI: ₹22,800 (34.13% of total revenue), Cash: ₹16,250 (24.3% of total revenue), Card: ₹27,800 (41.57% of total revenue). Card transactions contribute the highest revenue, indicating higher-value transactions tend to occur via cards.",
+//   "3. Average Transaction Value": "The average bill amount across all transactions is ₹2,228.33. By payment mode: UPI: ₹2,280 per transaction, Cash: ₹1,625 per transaction, Card: ₹2,780 per transaction. Customers paying via Card have the highest average spend, while Cash payments are associated with smaller transactions.",
+//   "4. Item Metrics": "A total of 150 items were purchased across all transactions. The average number of items per bill is 5. The highest number of items in a single bill is 10, with a corresponding total of ₹5,000 (Bill ID: 1012043, paid via UPI). The lowest number of items in a bill is 1, observed in 4 bills, with amounts ranging from ₹150 to ₹300.",
+//   "5. Highest and Lowest Transactions": "Highest transaction: ₹5,000 (Bill ID: 1012043, 10 items, UPI). Lowest transaction: ₹150 (Bill ID: 1012041, 1 item, Cash).",
+//   "6. Customer Insights": "The most frequent purchase size is between 4-6 items per bill, observed in 14 bills (46.67% of transactions). Customers purchasing 7+ items contribute significantly to the revenue, making up 36.66% of transactions and generating ₹28,600 (42.8% of the total revenue).",
+//   "7. UPI vs. Non-UPI Transactions": "UPI transactions account for 34.13% of revenue but are associated with both the highest-value bill and several high-value transactions. Non-UPI transactions (Cash + Card) contribute the remaining 65.87% of revenue, with Card being the dominant contributor.",
+//   "8. Revenue Distribution": "Low-value bills (₹0-₹1,000): 11 bills (36.67%), contributing ₹5,950 (8.9% of total revenue). Mid-value bills (₹1,001-₹3,000): 14 bills (46.67%), contributing ₹31,700 (47.45% of total revenue). High-value bills (₹3,001+): 5 bills (16.67%), contributing ₹29,200 (43.65% of total revenue). This indicates a smaller number of high-value transactions drive a significant portion of revenue.",
+//   "9. Customer Phone Numbers": "Each bill is tied to a unique phone number, suggesting no repeat customers within this dataset. This could indicate a diverse customer base or the need for strategies to encourage repeat business.",
+//   "10. Potential Insights for Decision Making": "1. Encourage Card Payments: Given the higher revenue from Card transactions, promoting this mode (e.g., discounts or offers) may drive higher-value sales. 2. Customer Retention: Loyalty programs targeting customers who make high-value transactions or purchase a higher number of items could be beneficial. 3. UPI Growth Opportunities: Despite accounting for only one-third of the transactions, UPI is associated with the largest transaction. Incentivizing UPI use might increase overall revenue. 4. Bundle Offers for Mid-Sized Purchases: As most customers purchase 4-6 items, introducing bundle offers or discounts in this range could increase revenue.",
+//   "Summary": "The provided data demonstrates balanced payment preferences, a notable reliance on high-value transactions, and opportunities to target mid-range buyers and high-value spenders. Leveraging these insights with strategic actions can optimize both revenue and customer satisfaction."
+// }
