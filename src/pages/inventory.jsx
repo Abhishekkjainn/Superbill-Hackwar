@@ -242,6 +242,246 @@ export default function Inventory() {
       gstPercentage: 12,
       status: 'In Stock',
     },
+    {
+      id: '300021',
+      name: 'Levi’s Men’s Casual Shirt',
+      category: 'Shirts',
+      image:
+        'https://images.unsplash.com/photo-1578588572900-b8e15e6b8e5c?fm=jpg&q=60&w=3000',
+      stockCount: 4,
+      buyingPrice: 2200,
+      sellingPrice: 2800,
+      gstPercentage: 12,
+      status: 'In Stock',
+    },
+    {
+      id: '300022',
+      name: 'H&M Women’s Jogger Pants',
+      category: 'Pants',
+      image:
+        'https://images.unsplash.com/photo-1575857543046-b1b22f1e3a6d?fm=jpg&q=60&w=3000',
+      stockCount: 6,
+      buyingPrice: 1500,
+      sellingPrice: 2000,
+      gstPercentage: 5,
+      status: 'In Stock',
+    },
+    {
+      id: '300023',
+      name: 'Van Heusen Men’s Casual Trousers',
+      category: 'Trousers',
+      image:
+        'https://images.unsplash.com/photo-1573901242389-d9a19ad65912?fm=jpg&q=60&w=3000',
+      stockCount: 3,
+      buyingPrice: 2800,
+      sellingPrice: 3500,
+      gstPercentage: 12,
+      status: 'In Stock',
+    },
+    {
+      id: '300024',
+      name: 'Puma Men’s Running Shoes',
+      category: 'Shoes',
+      image:
+        'https://images.unsplash.com/photo-1602853650792-b855bb53d8b5?fm=jpg&q=60&w=3000',
+      stockCount: 2,
+      buyingPrice: 4500,
+      sellingPrice: 6000,
+      gstPercentage: 12,
+      status: 'In Stock',
+    },
+    {
+      id: '300025',
+      name: 'Adidas Women’s Sports Bra',
+      category: 'Activewear',
+      image:
+        'https://images.unsplash.com/photo-1621322991065-bdadb85d5cc1?fm=jpg&q=60&w=3000',
+      stockCount: 5,
+      buyingPrice: 900,
+      sellingPrice: 1200,
+      gstPercentage: 5,
+      status: 'In Stock',
+    },
+    {
+      id: '300026',
+      name: 'Tommy Hilfiger Men’s Polo Shirt',
+      category: 'Shirts',
+      image:
+        'https://images.unsplash.com/photo-1591215100234-e8a1bba53957?fm=jpg&q=60&w=3000',
+      stockCount: 6,
+      buyingPrice: 2500,
+      sellingPrice: 3000,
+      gstPercentage: 12,
+      status: 'In Stock',
+    },
+    {
+      id: '300027',
+      name: 'Zara Women’s Blouse',
+      category: 'Tops',
+      image:
+        'https://images.unsplash.com/photo-1578997731330-fccf075c8502?fm=jpg&q=60&w=3000',
+      stockCount: 7,
+      buyingPrice: 1800,
+      sellingPrice: 2200,
+      gstPercentage: 12,
+      status: 'In Stock',
+    },
+    {
+      id: '300028',
+      name: 'H&M Women’s Casual Dress',
+      category: 'Dresses',
+      image:
+        'https://images.unsplash.com/photo-1584990982457-ff836957a6e5?fm=jpg&q=60&w=3000',
+      stockCount: 4,
+      buyingPrice: 3000,
+      sellingPrice: 3800,
+      gstPercentage: 12,
+      status: 'In Stock',
+    },
+    {
+      id: '300029',
+      name: 'Levi’s Men’s Denim Jeans',
+      category: 'Jeans',
+      image:
+        'https://images.unsplash.com/photo-1607734308069-6e1f381e56d0?fm=jpg&q=60&w=3000',
+      stockCount: 8,
+      buyingPrice: 2500,
+      sellingPrice: 3300,
+      gstPercentage: 12,
+      status: 'In Stock',
+    },
+    {
+      id: '300030',
+      name: 'Nike Men’s Training T-shirt',
+      category: 'T-shirts',
+      image:
+        'https://images.unsplash.com/photo-1569155579-297ee61fe9d1?fm=jpg&q=60&w=3000',
+      stockCount: 3,
+      buyingPrice: 1500,
+      sellingPrice: 2000,
+      gstPercentage: 5,
+      status: 'In Stock',
+    },
+    {
+      id: '300031',
+      name: 'Uniqlo Men’s Jeans',
+      category: 'Jeans',
+      image:
+        'https://images.unsplash.com/photo-1566221605-9235fbd90069?fm=jpg&q=60&w=3000',
+      stockCount: 5,
+      buyingPrice: 2200,
+      sellingPrice: 2700,
+      gstPercentage: 12,
+      status: 'In Stock',
+    },
+    {
+      id: '300032',
+      name: 'Biba Women’s Salwar Kameez',
+      category: 'Ethnic Wear',
+      image:
+        'https://images.unsplash.com/photo-1608139293009-b0d80c513875?fm=jpg&q=60&w=3000',
+      stockCount: 4,
+      buyingPrice: 3800,
+      sellingPrice: 4500,
+      gstPercentage: 12,
+      status: 'In Stock',
+    },
+    {
+      id: '300033',
+      name: 'Raymond Men’s Suit',
+      category: 'Suits',
+      image:
+        'https://images.unsplash.com/photo-1592878816635-0c1028e57b80?fm=jpg&q=60&w=3000',
+      stockCount: 2,
+      buyingPrice: 12000,
+      sellingPrice: 15000,
+      gstPercentage: 12,
+      status: 'In Stock',
+    },
+    {
+      id: '300034',
+      name: 'Van Heusen Men’s Shirt',
+      category: 'Shirts',
+      image:
+        'https://images.unsplash.com/photo-1572025401491-bf69b2b4295a?fm=jpg&q=60&w=3000',
+      stockCount: 5,
+      buyingPrice: 2200,
+      sellingPrice: 2800,
+      gstPercentage: 12,
+      status: 'In Stock',
+    },
+    {
+      id: '300035',
+      name: 'Adidas Women’s Sports Shoes',
+      category: 'Shoes',
+      image:
+        'https://images.unsplash.com/photo-1600195971452-b0a1c568bc7f?fm=jpg&q=60&w=3000',
+      stockCount: 3,
+      buyingPrice: 3500,
+      sellingPrice: 4500,
+      gstPercentage: 12,
+      status: 'In Stock',
+    },
+    {
+      id: '300036',
+      name: 'H&M Men’s Sweater',
+      category: 'Sweaters',
+      image:
+        'https://images.unsplash.com/photo-1585253093074-c1a734b7715a?fm=jpg&q=60&w=3000',
+      stockCount: 2,
+      buyingPrice: 2500,
+      sellingPrice: 3200,
+      gstPercentage: 12,
+      status: 'In Stock',
+    },
+    {
+      id: '300037',
+      name: 'Uniqlo Women’s Winter Jacket',
+      category: 'Jackets',
+      image:
+        'https://images.unsplash.com/photo-1600227633252-4782901b96a4?fm=jpg&q=60&w=3000',
+      stockCount: 4,
+      buyingPrice: 5000,
+      sellingPrice: 6500,
+      gstPercentage: 12,
+      status: 'In Stock',
+    },
+    {
+      id: '300038',
+      name: 'Puma Men’s Tracksuit',
+      category: 'Activewear',
+      image:
+        'https://images.unsplash.com/photo-1617020574586-b734285bb632?fm=jpg&q=60&w=3000',
+      stockCount: 3,
+      buyingPrice: 3500,
+      sellingPrice: 4500,
+      gstPercentage: 12,
+      status: 'In Stock',
+    },
+    {
+      id: '300039',
+      name: 'Levi’s Women’s Skirt',
+      category: 'Skirts',
+      image:
+        'https://images.unsplash.com/photo-1600104784641-1c01b20b2dbf?fm=jpg&q=60&w=3000',
+      stockCount: 5,
+      buyingPrice: 1500,
+      sellingPrice: 2000,
+      gstPercentage: 5,
+      status: 'In Stock',
+    },
+    {
+      id: '300040',
+      name: 'Adidas Men’s Sports Socks (3-Pack)',
+      category: 'Socks',
+      image:
+        'https://images.unsplash.com/photo-1600227633252-4782901b96a4?fm=jpg&q=60&w=3000',
+      stockCount: 12,
+      buyingPrice: 600,
+      sellingPrice: 900,
+      gstPercentage: 5,
+      status: 'In Stock',
+    },
   ];
 
   const [searchQuery, setSearchQuery] = useState(''); // State to handle search input
@@ -391,11 +631,14 @@ export default function Inventory() {
         </div>
         <div className="inventoryitems">
           {filteredProducts.length > 0 ? (
-            filteredProducts.map((product) => (
+            filteredProducts.map((product, index) => (
               <div className="productcard" key={product.id}>
                 <img src={product.image} alt="" className="productimage" />
                 <div className="productinfo">
-                  <div className="productname">{product.name}</div>
+                  <div className="productname">
+                    <span className="serialnumber">{index + 1} . </span>
+                    {product.name}
+                  </div>
                   <div className="productstatus">
                     <div className="smallcircle"></div>
                     <div className="prodcat">Id : {product.id}</div>
