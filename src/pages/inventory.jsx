@@ -3,242 +3,242 @@ import { useState } from 'react';
 export default function Inventory() {
   const mockData = [
     {
-      id: '200001',
-      name: 'Samsung Galaxy S23 Ultra',
-      category: 'Electronics',
-      image:
-        'https://images.unsplash.com/photo-1580910051071-e1029c9a68ac?fm=jpg&q=60&w=3000',
-      stockCount: 10,
-      buyingPrice: 95000,
-      sellingPrice: 110000,
-      gstPercentage: 18,
-      status: 'In Stock',
-    },
-    {
-      id: '200002',
-      name: 'Apple MacBook Pro M2 - 16GB RAM, 512GB SSD',
-      category: 'Electronics',
-      image:
-        'https://images.unsplash.com/photo-1579840393856-f7a2a8d187f8?fm=jpg&q=60&w=3000',
-      stockCount: 8,
-      buyingPrice: 185000,
-      sellingPrice: 205000,
-      gstPercentage: 18,
-      status: 'In Stock',
-    },
-    {
-      id: '200003',
-      name: 'Sony WH-1000XM5 Noise Cancelling Headphones',
-      category: 'Accessories',
-      image:
-        'https://images.unsplash.com/photo-1612535672467-2b1b209ba25b?fm=jpg&q=60&w=3000',
-      stockCount: 15,
-      buyingPrice: 25000,
-      sellingPrice: 29000,
-      gstPercentage: 12,
-      status: 'In Stock',
-    },
-    {
-      id: '200004',
-      name: 'Nike Air Zoom Pegasus 39 Running Shoes',
-      category: 'Shoes',
-      image:
-        'https://images.unsplash.com/photo-1591886971697-63a4573f4852?fm=jpg&q=60&w=3000',
-      stockCount: 20,
-      buyingPrice: 8000,
-      sellingPrice: 9500,
-      gstPercentage: 12,
-      status: 'In Stock',
-    },
-    {
-      id: '200005',
-      name: 'Ray-Ban Aviator Sunglasses',
-      category: 'Accessories',
-      image:
-        'https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?fm=jpg&q=60&w=3000',
-      stockCount: 25,
-      buyingPrice: 10000,
-      sellingPrice: 12000,
-      gstPercentage: 18,
-      status: 'In Stock',
-    },
-    {
-      id: '200006',
-      name: 'LG 65-Inch 4K OLED TV',
-      category: 'Home Appliances',
-      image:
-        'https://images.unsplash.com/photo-1598887142488-bf652c16624c?fm=jpg&q=60&w=3000',
-      stockCount: 5,
-      buyingPrice: 150000,
-      sellingPrice: 180000,
-      gstPercentage: 18,
-      status: 'In Stock',
-    },
-    {
-      id: '200007',
-      name: 'IKEA Poäng Armchair',
-      category: 'Furniture',
-      image:
-        'https://images.unsplash.com/photo-1582578562451-bce3b7e3d38c?fm=jpg&q=60&w=3000',
-      stockCount: 12,
-      buyingPrice: 8000,
-      sellingPrice: 9500,
-      gstPercentage: 12,
-      status: 'In Stock',
-    },
-    {
-      id: '200008',
-      name: 'BoAt BassHeads 100 Earphones',
-      category: 'Accessories',
-      image:
-        'https://images.unsplash.com/photo-1600180758895-72d824bb7da6?fm=jpg&q=60&w=3000',
-      stockCount: 50,
-      buyingPrice: 500,
-      sellingPrice: 800,
-      gstPercentage: 5,
-      status: 'In Stock',
-    },
-    {
-      id: '200009',
-      name: 'Fossil Gen 6 Smartwatch',
-      category: 'Watches',
-      image:
-        'https://images.unsplash.com/photo-1610390358536-fc02237ec927?fm=jpg&q=60&w=3000',
-      stockCount: 18,
-      buyingPrice: 22000,
-      sellingPrice: 25000,
-      gstPercentage: 12,
-      status: 'In Stock',
-    },
-    {
-      id: '200010',
-      name: 'Casio Scientific Calculator FX-991EX',
-      category: 'Stationery',
-      image:
-        'https://images.unsplash.com/photo-1576092765117-0bd9d3e65ab2?fm=jpg&q=60&w=3000',
-      stockCount: 30,
-      buyingPrice: 1200,
-      sellingPrice: 1500,
-      gstPercentage: 5,
-      status: 'In Stock',
-    },
-    {
-      id: '200011',
-      name: 'Philips Air Fryer HD9252/90',
-      category: 'Home Appliances',
-      image:
-        'https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?fm=jpg&q=60&w=3000',
-      stockCount: 7,
-      buyingPrice: 12000,
-      sellingPrice: 14000,
-      gstPercentage: 18,
-      status: 'In Stock',
-    },
-    {
-      id: '200012',
-      name: 'Decathlon Trekking Backpack - 60L',
-      category: 'Accessories',
-      image:
-        'https://images.unsplash.com/photo-1517949903275-a444ae1b55c4?fm=jpg&q=60&w=3000',
-      stockCount: 10,
-      buyingPrice: 3500,
-      sellingPrice: 4500,
-      gstPercentage: 12,
-      status: 'In Stock',
-    },
-    {
-      id: '200013',
-      name: 'Tata Tea Premium - 1kg Pack',
-      category: 'Groceries',
-      image:
-        'https://images.unsplash.com/photo-1618873925456-71dfbf99196c?fm=jpg&q=60&w=3000',
-      stockCount: 50,
-      buyingPrice: 400,
-      sellingPrice: 500,
-      gstPercentage: 5,
-      status: 'In Stock',
-    },
-    {
-      id: '200014',
-      name: 'Adidas Tracksuit - Men’s',
-      category: 'Clothing',
-      image:
-        'https://images.unsplash.com/photo-1586090720577-36baf5196c80?fm=jpg&q=60&w=3000',
-      stockCount: 15,
-      buyingPrice: 6000,
-      sellingPrice: 7500,
-      gstPercentage: 12,
-      status: 'In Stock',
-    },
-    {
-      id: '200015',
-      name: 'Havells Ceiling Fan - 1200mm',
-      category: 'Home Appliances',
-      image:
-        'https://images.unsplash.com/photo-1592194996308-872eac80d3df?fm=jpg&q=60&w=3000',
-      stockCount: 20,
-      buyingPrice: 2500,
-      sellingPrice: 3000,
-      gstPercentage: 5,
-      status: 'In Stock',
-    },
-    {
-      id: '200016',
-      name: 'Woodland Casual Boots - Men',
+      id: '300001',
+      name: 'Adidas Men’s Running Shoes',
       category: 'Shoes',
       image:
         'https://images.unsplash.com/photo-1600180758656-55e1e19eb0a5?fm=jpg&q=60&w=3000',
-      stockCount: 10,
+      stockCount: 12,
+      buyingPrice: 4000,
+      sellingPrice: 5500,
+      gstPercentage: 12,
+      status: 'In Stock',
+    },
+    {
+      id: '300002',
+      name: 'Nike Women’s Training T-shirt',
+      category: 'T-shirts',
+      image:
+        'https://images.unsplash.com/photo-1586090720577-36baf5196c80?fm=jpg&q=60&w=3000',
+      stockCount: 8,
+      buyingPrice: 1200,
+      sellingPrice: 1600,
+      gstPercentage: 5,
+      status: 'In Stock',
+    },
+    {
+      id: '300003',
+      name: 'H&M Slim Fit Jeans - Women',
+      category: 'Jeans',
+      image:
+        'https://images.unsplash.com/photo-1578706822472-29703f5a53a5?fm=jpg&q=60&w=3000',
+      stockCount: 0,
+      buyingPrice: 2500,
+      sellingPrice: 3300,
+      gstPercentage: 12,
+      status: 'Out of Stock',
+    },
+    {
+      id: '300004',
+      name: 'Zara Party Dress',
+      category: 'Dresses',
+      image:
+        'https://images.unsplash.com/photo-1578432018647-84a57bdb8d12?fm=jpg&q=60&w=3000',
+      stockCount: 5,
       buyingPrice: 5000,
       sellingPrice: 6500,
       gstPercentage: 12,
       status: 'In Stock',
     },
     {
-      id: '200017',
-      name: 'Puma Polo T-shirt',
-      category: 'Clothing',
+      id: '300005',
+      name: 'Levi’s Men’s Denim Jacket',
+      category: 'Jackets',
       image:
-        'https://images.unsplash.com/photo-1542291026-7eec264c27ff?fm=jpg&q=60&w=3000',
-      stockCount: 25,
-      buyingPrice: 1500,
-      sellingPrice: 2000,
-      gstPercentage: 5,
-      status: 'In Stock',
-    },
-    {
-      id: '200018',
-      name: 'Prestige Non-Stick Cookware Set',
-      category: 'Home Appliances',
-      image:
-        'https://images.unsplash.com/photo-1564836235912-47e03c30d9f9?fm=jpg&q=60&w=3000',
+        'https://images.unsplash.com/photo-1591035897819-d1736b345bf8?fm=jpg&q=60&w=3000',
       stockCount: 15,
-      buyingPrice: 4000,
-      sellingPrice: 5000,
+      buyingPrice: 4500,
+      sellingPrice: 5500,
       gstPercentage: 12,
       status: 'In Stock',
     },
     {
-      id: '200019',
-      name: 'Amul Butter - 500g',
-      category: 'Groceries',
+      id: '300006',
+      name: 'Puma Women’s Sports Bra',
+      category: 'Activewear',
       image:
-        'https://images.unsplash.com/photo-1604937228763-59aebdbd1301?fm=jpg&q=60&w=3000',
-      stockCount: 100,
-      buyingPrice: 200,
-      sellingPrice: 250,
+        'https://images.unsplash.com/photo-1621322991065-bdadb85d5cc1?fm=jpg&q=60&w=3000',
+      stockCount: 7,
+      buyingPrice: 1000,
+      sellingPrice: 1400,
       gstPercentage: 5,
       status: 'In Stock',
     },
     {
-      id: '200020',
-      name: 'H&M Slim Fit Jeans - Men',
-      category: 'Clothing',
+      id: '300007',
+      name: 'Woodland Casual Boots',
+      category: 'Shoes',
       image:
-        'https://images.unsplash.com/photo-1578706822472-29703f5a53a5?fm=jpg&q=60&w=3000',
+        'https://images.unsplash.com/photo-1571771686378-cf4da03603b3?fm=jpg&q=60&w=3000',
+      stockCount: 0,
+      buyingPrice: 6000,
+      sellingPrice: 7500,
+      gstPercentage: 12,
+      status: 'Out of Stock',
+    },
+    {
+      id: '300008',
+      name: 'Uniqlo Fleece Hoodie',
+      category: 'Hoodies',
+      image:
+        'https://images.unsplash.com/photo-1526948531397-19b0e03277dc?fm=jpg&q=60&w=3000',
+      stockCount: 20,
+      buyingPrice: 3000,
+      sellingPrice: 4000,
+      gstPercentage: 12,
+      status: 'In Stock',
+    },
+    {
+      id: '300009',
+      name: 'Reebok Training Joggers',
+      category: 'Activewear',
+      image:
+        'https://images.unsplash.com/photo-1580293664094-85c8a3e9f8fa?fm=jpg&q=60&w=3000',
+      stockCount: 10,
+      buyingPrice: 2200,
+      sellingPrice: 3000,
+      gstPercentage: 5,
+      status: 'In Stock',
+    },
+    {
+      id: '300010',
+      name: 'Gap Kids’ Graphic T-shirt',
+      category: 'T-shirts',
+      image:
+        'https://images.unsplash.com/photo-1612506691673-e6b2687514b4?fm=jpg&q=60&w=3000',
       stockCount: 30,
-      buyingPrice: 2500,
-      sellingPrice: 3500,
+      buyingPrice: 800,
+      sellingPrice: 1200,
+      gstPercentage: 5,
+      status: 'In Stock',
+    },
+    {
+      id: '300011',
+      name: 'Tommy Hilfiger Polo T-shirt',
+      category: 'T-shirts',
+      image:
+        'https://images.unsplash.com/photo-1542291026-7eec264c27ff?fm=jpg&q=60&w=3000',
+      stockCount: 6,
+      buyingPrice: 3000,
+      sellingPrice: 4000,
+      gstPercentage: 12,
+      status: 'In Stock',
+    },
+    {
+      id: '300012',
+      name: 'Under Armour Sports Shorts',
+      category: 'Shorts',
+      image:
+        'https://images.unsplash.com/photo-1532259413637-72e6d1b2b18f?fm=jpg&q=60&w=3000',
+      stockCount: 0,
+      buyingPrice: 1000,
+      sellingPrice: 1400,
+      gstPercentage: 5,
+      status: 'Out of Stock',
+    },
+    {
+      id: '300013',
+      name: 'Biba Women’s Kurta Set',
+      category: 'Ethnic Wear',
+      image:
+        'https://images.unsplash.com/photo-1614938573072-11cc5e2f017e?fm=jpg&q=60&w=3000',
+      stockCount: 9,
+      buyingPrice: 3500,
+      sellingPrice: 4500,
+      gstPercentage: 12,
+      status: 'In Stock',
+    },
+    {
+      id: '300014',
+      name: 'Calvin Klein Women’s Dress',
+      category: 'Dresses',
+      image:
+        'https://images.unsplash.com/photo-1560807707-8cc77767d783?fm=jpg&q=60&w=3000',
+      stockCount: 14,
+      buyingPrice: 8000,
+      sellingPrice: 10000,
+      gstPercentage: 12,
+      status: 'In Stock',
+    },
+    {
+      id: '300015',
+      name: 'Allen Solly Formal Trousers',
+      category: 'Trousers',
+      image:
+        'https://images.unsplash.com/photo-1529333166436-c7e802f7e3a6?fm=jpg&q=60&w=3000',
+      stockCount: 5,
+      buyingPrice: 3000,
+      sellingPrice: 4000,
+      gstPercentage: 12,
+      status: 'In Stock',
+    },
+    {
+      id: '300016',
+      name: 'Forever 21 Women’s Tank Top',
+      category: 'Tops',
+      image:
+        'https://images.unsplash.com/photo-1586438905620-2f6d9bdf12e2?fm=jpg&q=60&w=3000',
+      stockCount: 25,
+      buyingPrice: 1000,
+      sellingPrice: 1500,
+      gstPercentage: 5,
+      status: 'In Stock',
+    },
+    {
+      id: '300017',
+      name: 'Raymond Blazer - Men',
+      category: 'Blazers',
+      image:
+        'https://images.unsplash.com/photo-1553524819-27ddf0ea38b4?fm=jpg&q=60&w=3000',
+      stockCount: 8,
+      buyingPrice: 10000,
+      sellingPrice: 12000,
+      gstPercentage: 12,
+      status: 'In Stock',
+    },
+    {
+      id: '300018',
+      name: 'Van Heusen Women’s Formal Shirt',
+      category: 'Shirts',
+      image:
+        'https://images.unsplash.com/photo-1612516461701-6c0b3f8c03e4?fm=jpg&q=60&w=3000',
+      stockCount: 11,
+      buyingPrice: 2000,
+      sellingPrice: 2500,
+      gstPercentage: 12,
+      status: 'In Stock',
+    },
+    {
+      id: '300019',
+      name: 'Zivame Women’s Loungewear Set',
+      category: 'Loungewear',
+      image:
+        'https://images.unsplash.com/photo-1623227823348-4f6318a2c3c5?fm=jpg&q=60&w=3000',
+      stockCount: 16,
+      buyingPrice: 1500,
+      sellingPrice: 2200,
+      gstPercentage: 5,
+      status: 'In Stock',
+    },
+    {
+      id: '300020',
+      name: 'Peter England Men’s Suit',
+      category: 'Suits',
+      image:
+        'https://images.unsplash.com/photo-1592878816635-0c1028e57b80?fm=jpg&q=60&w=3000',
+      stockCount: 10,
+      buyingPrice: 12000,
+      sellingPrice: 15000,
       gstPercentage: 12,
       status: 'In Stock',
     },
@@ -281,6 +281,27 @@ export default function Inventory() {
     setSelectedCategory(category);
   };
 
+  const [activeFilter, setActiveFilter] = useState('Available');
+
+  // Function to filter items based on the active filter
+  const getFilteredItems = () => {
+    if (activeFilter === 'Available') {
+      return mockData.filter((item) => item.stockCount > 5);
+    } else if (activeFilter === 'Low Availability') {
+      return mockData.filter(
+        (item) => item.stockCount > 0 && item.stockCount <= 5
+      );
+    } else if (activeFilter === 'Stock Over') {
+      return mockData.filter((item) => item.stockCount === 0);
+    }
+    return mockData;
+  };
+
+  // Function to handle tab change
+  const handleFilterChange = (filter) => {
+    setActiveFilter(filter);
+  };
+
   return (
     <div className="inventory">
       <div className="categoriesandsearchbar">
@@ -312,7 +333,62 @@ export default function Inventory() {
         </div>
       </div>
       <div className="products">
-        <div className="stockalertandinsights"></div>
+        <div className="stockalertandinsights">
+          {/* Filter Tabs */}
+          <div className="filteralerts">
+            <div
+              className={`filter ${
+                activeFilter === 'Available' ? 'activefilter' : ''
+              }`}
+              onClick={() => setActiveFilter('Available')}
+            >
+              Available
+            </div>
+            <div
+              className={`filter ${
+                activeFilter === 'Low Availability' ? 'activefilter' : ''
+              }`}
+              onClick={() => setActiveFilter('Low Availability')}
+            >
+              Low Availability
+            </div>
+            <div
+              className={`filter ${
+                activeFilter === 'Stock Over' ? 'activefilter' : ''
+              }`}
+              onClick={() => setActiveFilter('Stock Over')}
+            >
+              Stock Over
+            </div>
+          </div>
+
+          {/* Items Alerts */}
+          <div className="itemsalerts">
+            {getFilteredItems().length > 0 ? (
+              getFilteredItems().map((item) => (
+                <div className="itemalert" key={item.id}>
+                  <div className="alertproductinfo">
+                    <div className="alertproductname">
+                      <div className="smallcircle"></div> {item.name}
+                    </div>
+                    <div className="alertproductidcat">
+                      Id: {item.id} | {item.category}
+                    </div>
+                  </div>
+                  <div className="alertstockamount">
+                    <div className="stockamounttag">
+                      {item.stockCount > 0
+                        ? `${item.stockCount} in Stock`
+                        : 'Out of Stock'}
+                    </div>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <p>No items found for the selected filter.</p>
+            )}
+          </div>
+        </div>
         <div className="inventoryitems">
           {filteredProducts.length > 0 ? (
             filteredProducts.map((product) => (
@@ -327,7 +403,17 @@ export default function Inventory() {
                     <div className="prodcat">{product.category}</div>
                     <div className="smallcircle"></div>
                     <img src="/stock.png" alt="Stock" className="stockicon" />
-                    <div className="stockcount">
+                    <div
+                      className="stockcount"
+                      style={{
+                        color:
+                          product.stockCount === 0
+                            ? 'rgb(255, 109, 109)'
+                            : product.stockCount <= 5
+                            ? 'royalblue'
+                            : '#39db7d',
+                      }}
+                    >
                       {product.stockCount} in Stock
                     </div>
                   </div>
@@ -374,48 +460,4 @@ export default function Inventory() {
       </div>
     </div>
   );
-}
-{
-  /* <div className="productcard">
-  <img
-    src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8fDA%3D"
-    alt=""
-    className="productimage"
-  />
-  <div className="productinfo">
-    <div className="productname">Adidas Orketro Shoes - Red Size 32</div>
-    <div className="productstatus">
-      <div className="smallcircle"></div>
-      <div className="prodcat">Id : 100014</div>
-      <div className="smallcircle"></div>
-      <div className="prodcat">Shoes</div>
-      <div className="smallcircle"></div>
-      <img src="/stock.png" alt="Stock" className="stockicon" />
-      <div className="stockcount">16 in Stock</div>
-    </div>
-  </div>
-  <div className="sep"></div>
-  <div className="productprice">
-    <div className="buyingprice">
-      <div className="buyinghead">
-        <div className="smallcirclegreen"></div>
-        <div className="buyingtext">Buying Price</div>
-      </div>
-      <div className="buyingpriceamount">15000 Rs</div>
-    </div>
-    <div className="sep"></div>
-    <div className="sellingprice">
-      <div className="sellinghead">
-        <div className="smallcirclegreen"></div>
-        <div className="sellingtext">Selling Price</div>
-      </div>
-      <div className="sellingpriceamount">17000 Rs</div>
-    </div>
-    <div className="sep"></div>
-    <div className="actions">
-      <img src="/delete.png" alt="Delete" className="deleteicon" />
-      <img src="/edit.png" alt="Delete" className="deleteicon" />
-    </div>
-  </div>
-</div>; */
 }
