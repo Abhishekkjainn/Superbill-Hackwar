@@ -30,10 +30,10 @@ export default function Header() {
       </div>
       <div className="actions">
         <div className="buttons">
-          <div className="primarybutton">
+          <Link to={'/AddInventory'} className="primarybutton">
             <img src="/add.png" alt="Add An Item" className="buttonicon" />
             <div className="primarybuttontag">Add Item</div>
-          </div>
+          </Link>
           <div className="primarybutton">
             <img src="/bill.png" alt="Add An Item" className="buttonicon" />
             <div className="primarybuttontag">Generate Bill</div>
