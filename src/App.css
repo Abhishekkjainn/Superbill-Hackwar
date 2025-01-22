@@ -795,8 +795,14 @@ table tr:hover {
   height: 95%;
   margin: 0px;
   margin-right: 12px;
-  /* background-color: #f7f7f7; */
+  background-color: #f7f7f7;
   border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 .sidebar {
@@ -856,6 +862,213 @@ table tr:hover {
   text-align: justify;
 }
 
+.topbarmainbill{
+  width: 100%;
+  height: 80px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f3f3f3;
+  z-index: 50;
+}
+.billmainview{
+  width: 100%;
+  height: calc(100% - 80px);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f3f3f3;
+}
+.billmainview>*{
+  flex-shrink: 0;
+}
+.searchbar{
+  background-color: rgb(255, 255, 255);
+  border-radius: 40px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  height: 35px;
+  width: 300px;
+}
+.searchicon{
+  width: 16px;
+  filter: invert(1);
+}
+.searchbutton{
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(4px);
+  background-color: #0f171a;
+}
+.searchinput{
+  border: none;
+  outline: none;
+  background-color: transparent;
+  height: 100%;
+  flex: 1;
+  margin-left: 8px;
+  font-size: 14px;
+}
+.searchinput::placeholder{
+  font-size: 12px;
+  font-weight: 600;
+}
+.headingtop{
+  font-size: 26px;
+  font-weight: 600;
+  color: black;
+  margin-left: 30px;
+}
+.billview{
+  width: 95%;
+  height: 60px;
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;flex-direction: column;
+  margin-top: 10px;
+
+}
+.topbill{
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateY(4px);
+}
+.bottombill{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+.firstsectiontop{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.secondsectiontop{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+.firstpartbottom,.secondpartbottom{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.secondpartbottom{
+  margin-right: 20px;
+}
+.editbill{
+  width: 12px;
+  margin: 4px;
+}
+
+.billid{
+  margin-left: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.billdate{
+  font-size: 12px;
+  font-weight: 600;
+  color: grey;
+  margin-left: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.billamount{
+  font-size: 12px;
+  font-weight: 600;
+  color: black;
+  margin-left: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+
+
+/* Container Styling */
+.bills-table-container {
+  margin: 20px auto;
+  padding: 0px;
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styling */
+.bills-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Header Row Styling */
+.bills-table thead tr {
+  background-color: #f7f9fc;
+  color: #555;
+  font-weight: bold;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+}
+
+.bills-table th {
+  padding: 12px 15px;
+  text-transform: uppercase;
+}
+
+/* Data Row Styling */
+.bills-table tbody tr {
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.3s ease;
+}
+
+.bills-table tbody tr:hover {
+  background-color: #f1f5fc;
+}
+
+.bills-table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .bills-table th,
+  .bills-table td {
+    font-size: 14px;
+    padding: 10px 8px;
+  }
+}
 
 
 
