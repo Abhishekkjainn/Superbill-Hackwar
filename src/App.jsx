@@ -16,8 +16,6 @@ function App() {
         <Route path="/inventory" element={<Inventory />} />
         <Route path="/bills" element={<Bills />} />
         <Route path="/AISuggestions" element={<AISuggestions />} />
-        {/* <Route path="/page2" element={<Page2 />} /> */}
-        {/* <Route path="*" element={<NotFound />} /> 404 fallback */}
       </Routes>
     </Router>
   );

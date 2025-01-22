@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import React, { PureComponent } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 import {
   AreaChart,
@@ -606,9 +607,9 @@ export default function Page1() {
                       <td>{bill.totalAmount}</td>
                       <td>{bill.paymentMode}</td>
                       <td>
-                        <a href="#" className="view-details">
+                        <Link to={'/bills'} className="view-details">
                           View Details
-                        </a>
+                        </Link>
                       </td>
                     </tr>
                   ))}
