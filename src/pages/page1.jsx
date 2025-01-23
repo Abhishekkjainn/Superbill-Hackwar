@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import React, { PureComponent } from 'react';
@@ -16,226 +16,252 @@ import {
 } from 'recharts';
 
 export default function Page1() {
-  const mockBills = [
-    {
-      billId: '1012025',
-      phoneNumber: '9876543210',
-      items: 5,
-      totalAmount: '₹1500',
-      paymentMode: 'UPI',
-    },
-    {
-      billId: '1012026',
-      phoneNumber: '9876543211',
-      items: 3,
-      totalAmount: '₹850',
-      paymentMode: 'Cash',
-    },
-    {
-      billId: '1012027',
-      phoneNumber: '9876543212',
-      items: 7,
-      totalAmount: '₹2100',
-      paymentMode: 'Card',
-    },
-    {
-      billId: '1012028',
-      phoneNumber: '9876543213',
-      items: 4,
-      totalAmount: '₹1200',
-      paymentMode: 'UPI',
-    },
-    {
-      billId: '1012029',
-      phoneNumber: '9876543214',
-      items: 6,
-      totalAmount: '₹1800',
-      paymentMode: 'Cash',
-    },
-    {
-      billId: '1012030',
-      phoneNumber: '9876543215',
-      items: 2,
-      totalAmount: '₹500',
-      paymentMode: 'Card',
-    },
-    {
-      billId: '1012031',
-      phoneNumber: '9876543216',
-      items: 9,
-      totalAmount: '₹3500',
-      paymentMode: 'UPI',
-    },
-    {
-      billId: '1012032',
-      phoneNumber: '9876543217',
-      items: 1,
-      totalAmount: '₹200',
-      paymentMode: 'Cash',
-    },
-    {
-      billId: '1012033',
-      phoneNumber: '9876543218',
-      items: 8,
-      totalAmount: '₹2700',
-      paymentMode: 'Card',
-    },
-    {
-      billId: '1012034',
-      phoneNumber: '9876543219',
-      items: 3,
-      totalAmount: '₹750',
-      paymentMode: 'UPI',
-    },
-    {
-      billId: '1012035',
-      phoneNumber: '9876543220',
-      items: 4,
-      totalAmount: '₹1400',
-      paymentMode: 'Cash',
-    },
-    {
-      billId: '1012036',
-      phoneNumber: '9876543221',
-      items: 5,
-      totalAmount: '₹1600',
-      paymentMode: 'Card',
-    },
-    {
-      billId: '1012037',
-      phoneNumber: '9876543222',
-      items: 6,
-      totalAmount: '₹1950',
-      paymentMode: 'UPI',
-    },
-    {
-      billId: '1012038',
-      phoneNumber: '9876543223',
-      items: 7,
-      totalAmount: '₹2300',
-      paymentMode: 'Cash',
-    },
-    {
-      billId: '1012039',
-      phoneNumber: '9876543224',
-      items: 2,
-      totalAmount: '₹600',
-      paymentMode: 'Card',
-    },
-    {
-      billId: '1012040',
-      phoneNumber: '9876543225',
-      items: 8,
-      totalAmount: '₹3200',
-      paymentMode: 'UPI',
-    },
-    {
-      billId: '1012041',
-      phoneNumber: '9876543226',
-      items: 1,
-      totalAmount: '₹150',
-      paymentMode: 'Cash',
-    },
-    {
-      billId: '1012042',
-      phoneNumber: '9876543227',
-      items: 9,
-      totalAmount: '₹4000',
-      paymentMode: 'Card',
-    },
-    {
-      billId: '1012043',
-      phoneNumber: '9876543228',
-      items: 10,
-      totalAmount: '₹5000',
-      paymentMode: 'UPI',
-    },
-    {
-      billId: '1012044',
-      phoneNumber: '9876543229',
-      items: 3,
-      totalAmount: '₹950',
-      paymentMode: 'Cash',
-    },
-    {
-      billId: '1012045',
-      phoneNumber: '9876543230',
-      items: 5,
-      totalAmount: '₹2200',
-      paymentMode: 'Card',
-    },
-    {
-      billId: '1012046',
-      phoneNumber: '9876543231',
-      items: 4,
-      totalAmount: '₹1700',
-      paymentMode: 'UPI',
-    },
-    {
-      billId: '1012047',
-      phoneNumber: '9876543232',
-      items: 2,
-      totalAmount: '₹550',
-      paymentMode: 'Cash',
-    },
-    {
-      billId: '1012048',
-      phoneNumber: '9876543233',
-      items: 6,
-      totalAmount: '₹2800',
-      paymentMode: 'Card',
-    },
-    {
-      billId: '1012049',
-      phoneNumber: '9876543234',
-      items: 1,
-      totalAmount: '₹300',
-      paymentMode: 'UPI',
-    },
-    {
-      billId: '1012050',
-      phoneNumber: '9876543235',
-      items: 7,
-      totalAmount: '₹3100',
-      paymentMode: 'Cash',
-    },
-    {
-      billId: '1012051',
-      phoneNumber: '9876543236',
-      items: 8,
-      totalAmount: '₹3500',
-      paymentMode: 'Card',
-    },
-    {
-      billId: '1012052',
-      phoneNumber: '9876543237',
-      items: 9,
-      totalAmount: '₹4500',
-      paymentMode: 'UPI',
-    },
-    {
-      billId: '1012053',
-      phoneNumber: '9876543238',
-      items: 3,
-      totalAmount: '₹800',
-      paymentMode: 'Cash',
-    },
-    {
-      billId: '1012054',
-      phoneNumber: '9876543239',
-      items: 4,
-      totalAmount: '₹1300',
-      paymentMode: 'Card',
-    },
-  ];
+  // const mockBills = [
+  //   {
+  //     billId: '1012025',
+  //     phoneNumber: '9876543210',
+  //     items: 5,
+  //     totalAmount: '₹1500',
+  //     paymentMode: 'UPI',
+  //   },
+  //   {
+  //     billId: '1012026',
+  //     phoneNumber: '9876543211',
+  //     items: 3,
+  //     totalAmount: '₹850',
+  //     paymentMode: 'Cash',
+  //   },
+  //   {
+  //     billId: '1012027',
+  //     phoneNumber: '9876543212',
+  //     items: 7,
+  //     totalAmount: '₹2100',
+  //     paymentMode: 'Card',
+  //   },
+  //   {
+  //     billId: '1012028',
+  //     phoneNumber: '9876543213',
+  //     items: 4,
+  //     totalAmount: '₹1200',
+  //     paymentMode: 'UPI',
+  //   },
+  //   {
+  //     billId: '1012029',
+  //     phoneNumber: '9876543214',
+  //     items: 6,
+  //     totalAmount: '₹1800',
+  //     paymentMode: 'Cash',
+  //   },
+  //   {
+  //     billId: '1012030',
+  //     phoneNumber: '9876543215',
+  //     items: 2,
+  //     totalAmount: '₹500',
+  //     paymentMode: 'Card',
+  //   },
+  //   {
+  //     billId: '1012031',
+  //     phoneNumber: '9876543216',
+  //     items: 9,
+  //     totalAmount: '₹3500',
+  //     paymentMode: 'UPI',
+  //   },
+  //   {
+  //     billId: '1012032',
+  //     phoneNumber: '9876543217',
+  //     items: 1,
+  //     totalAmount: '₹200',
+  //     paymentMode: 'Cash',
+  //   },
+  //   {
+  //     billId: '1012033',
+  //     phoneNumber: '9876543218',
+  //     items: 8,
+  //     totalAmount: '₹2700',
+  //     paymentMode: 'Card',
+  //   },
+  //   {
+  //     billId: '1012034',
+  //     phoneNumber: '9876543219',
+  //     items: 3,
+  //     totalAmount: '₹750',
+  //     paymentMode: 'UPI',
+  //   },
+  //   {
+  //     billId: '1012035',
+  //     phoneNumber: '9876543220',
+  //     items: 4,
+  //     totalAmount: '₹1400',
+  //     paymentMode: 'Cash',
+  //   },
+  //   {
+  //     billId: '1012036',
+  //     phoneNumber: '9876543221',
+  //     items: 5,
+  //     totalAmount: '₹1600',
+  //     paymentMode: 'Card',
+  //   },
+  //   {
+  //     billId: '1012037',
+  //     phoneNumber: '9876543222',
+  //     items: 6,
+  //     totalAmount: '₹1950',
+  //     paymentMode: 'UPI',
+  //   },
+  //   {
+  //     billId: '1012038',
+  //     phoneNumber: '9876543223',
+  //     items: 7,
+  //     totalAmount: '₹2300',
+  //     paymentMode: 'Cash',
+  //   },
+  //   {
+  //     billId: '1012039',
+  //     phoneNumber: '9876543224',
+  //     items: 2,
+  //     totalAmount: '₹600',
+  //     paymentMode: 'Card',
+  //   },
+  //   {
+  //     billId: '1012040',
+  //     phoneNumber: '9876543225',
+  //     items: 8,
+  //     totalAmount: '₹3200',
+  //     paymentMode: 'UPI',
+  //   },
+  //   {
+  //     billId: '1012041',
+  //     phoneNumber: '9876543226',
+  //     items: 1,
+  //     totalAmount: '₹150',
+  //     paymentMode: 'Cash',
+  //   },
+  //   {
+  //     billId: '1012042',
+  //     phoneNumber: '9876543227',
+  //     items: 9,
+  //     totalAmount: '₹4000',
+  //     paymentMode: 'Card',
+  //   },
+  //   {
+  //     billId: '1012043',
+  //     phoneNumber: '9876543228',
+  //     items: 10,
+  //     totalAmount: '₹5000',
+  //     paymentMode: 'UPI',
+  //   },
+  //   {
+  //     billId: '1012044',
+  //     phoneNumber: '9876543229',
+  //     items: 3,
+  //     totalAmount: '₹950',
+  //     paymentMode: 'Cash',
+  //   },
+  //   {
+  //     billId: '1012045',
+  //     phoneNumber: '9876543230',
+  //     items: 5,
+  //     totalAmount: '₹2200',
+  //     paymentMode: 'Card',
+  //   },
+  //   {
+  //     billId: '1012046',
+  //     phoneNumber: '9876543231',
+  //     items: 4,
+  //     totalAmount: '₹1700',
+  //     paymentMode: 'UPI',
+  //   },
+  //   {
+  //     billId: '1012047',
+  //     phoneNumber: '9876543232',
+  //     items: 2,
+  //     totalAmount: '₹550',
+  //     paymentMode: 'Cash',
+  //   },
+  //   {
+  //     billId: '1012048',
+  //     phoneNumber: '9876543233',
+  //     items: 6,
+  //     totalAmount: '₹2800',
+  //     paymentMode: 'Card',
+  //   },
+  //   {
+  //     billId: '1012049',
+  //     phoneNumber: '9876543234',
+  //     items: 1,
+  //     totalAmount: '₹300',
+  //     paymentMode: 'UPI',
+  //   },
+  //   {
+  //     billId: '1012050',
+  //     phoneNumber: '9876543235',
+  //     items: 7,
+  //     totalAmount: '₹3100',
+  //     paymentMode: 'Cash',
+  //   },
+  //   {
+  //     billId: '1012051',
+  //     phoneNumber: '9876543236',
+  //     items: 8,
+  //     totalAmount: '₹3500',
+  //     paymentMode: 'Card',
+  //   },
+  //   {
+  //     billId: '1012052',
+  //     phoneNumber: '9876543237',
+  //     items: 9,
+  //     totalAmount: '₹4500',
+  //     paymentMode: 'UPI',
+  //   },
+  //   {
+  //     billId: '1012053',
+  //     phoneNumber: '9876543238',
+  //     items: 3,
+  //     totalAmount: '₹800',
+  //     paymentMode: 'Cash',
+  //   },
+  //   {
+  //     billId: '1012054',
+  //     phoneNumber: '9876543239',
+  //     items: 4,
+  //     totalAmount: '₹1300',
+  //     paymentMode: 'Card',
+  //   },
+  // ];
   const [searchQuery, setSearchQuery] = useState('');
-  const [filteredBills, setFilteredBills] = useState(mockBills);
+  const [mockBills, setMockBills] = useState([]); // State to store fetched bills
+  const [filteredBills, setFilteredBills] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    // Function to fetch bills
+    const fetchBills = async () => {
+      try {
+        const vendoremail = localStorage.getItem('vendoremail');
+        const response = await fetch(
+          'https://superbill-api.vercel.app/fetchbills/automatevellore@gmail.com'
+        ); // Replace with the actual vendor email
+        const data = await response.json();
+
+        if (data.success) {
+          setMockBills(data.bills);
+          setFilteredBills(data.bills); // Set initial filtered bills
+        } else {
+          console.error('Error:', data.message);
+        }
+      } catch (error) {
+        console.error('Error fetching bills:', error);
+      }
+    };
+
+    // Call the fetch function
+    fetchBills();
+  }, []);
 
   const handleSearch = (event) => {
     const query = event.target.value.toLowerCase();
     setSearchQuery(query);
 
-    // Filter bills based on search query
     const filtered = mockBills.filter(
       (bill) =>
         bill.billId.toLowerCase().includes(query) ||
