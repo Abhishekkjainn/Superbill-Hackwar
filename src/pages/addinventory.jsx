@@ -116,13 +116,16 @@ export default function AddInventory() {
         inventory: inventory,
       };
 
-      const response = await fetch('http://localhost:3000/addinventory', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(requestBody), // Send the data as JSON
-      });
+      const response = await fetch(
+        'https://superbill-api.vercel.app/addinventory',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(requestBody), // Send the data as JSON
+        }
+      );
 
       if (response.ok) {
         alert('Inventory saved successfully!');
