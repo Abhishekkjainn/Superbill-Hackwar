@@ -103,21 +103,36 @@ export default function AddInventory() {
     }
 
     try {
-      const response = await fetch('YOUR_API_ENDPOINT', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ inventory }),
-      });
+      // Retrieve vendoremail from local storage
+      const vendoremail = localStorage.getItem('vendoremail');
+      if (!vendoremail) {
+        alert('Vendor email not found in local storage. Please log in again.');
+        return;
+      }
+
+      const response = await fetch(
+        'https://superbill-api.vercel.app/addinventory',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ vendoremail, inventory }),
+        }
+      );
+
       if (response.ok) {
         alert('Inventory saved successfully!');
-        setInventory([]);
+        setInventory([]); // Reset the inventory array after successful save
       } else {
-        alert('Failed to save inventory.');
+        const errorData = await response.json(); // Parse the error response
+        alert(
+          `Failed to save inventory: ${errorData.message || 'Unknown error'}`
+        );
       }
     } catch (error) {
       console.error('Error saving inventory:', error);
+      alert('An error occurred while saving inventory. Please try again.');
     }
   };
 

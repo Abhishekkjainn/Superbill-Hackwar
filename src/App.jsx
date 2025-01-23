@@ -10,7 +10,7 @@ import AddInventory from './pages/addinventory';
 
 function App() {
   useEffect(() => {
-    const vendorEmail = 'jainabhishek1904@gmail.com'; // Replace with your logic to get the vendor email
+    const vendorEmail = 'automatevellore@gmail.com'; // Replace with your logic to get the vendor email
     localStorage.setItem('vendoremail', vendorEmail);
     console.log('Vendor email set to:', vendorEmail);
   }, []);
