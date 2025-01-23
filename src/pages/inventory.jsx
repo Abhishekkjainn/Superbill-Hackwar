@@ -6,25 +6,22 @@ export default function Inventory() {
   const [searchQuery, setSearchQuery] = useState(''); // State to handle search input
   const [selectedCategory, setSelectedCategory] = useState('All'); // State to track active category
 
-  const categories = [
-    'All',
-    ...new Set(inventoryData.map((item) => item.category)),
-  ];
-
   // Fetch inventory data when the page loads
   useEffect(() => {
-    const vendoremail = localStorage.getItem('vendoremail');
-    console.log(vendoremail);
-    // Function to fetch inventory data based on vendor email
     const fetchInventory = async () => {
+      const vendoremail = localStorage.getItem('vendoremail');
       try {
-        // Fetch inventory using vendorEmail
         const response = await axios.get(
           `https://superbill-api.vercel.app/fetchinventory/vendoremail=${vendoremail}`
         );
-        // Set the inventory data to inventoryData state
         if (response.data.success) {
-          setInventoryData(response.data.inventory);
+          const fetchedData = response.data.inventory;
+          // Check if fetchedData is an array
+          if (Array.isArray(fetchedData)) {
+            setInventoryData(fetchedData);
+          } else {
+            console.error('Expected inventory data to be an array');
+          }
         } else {
           console.error('Error fetching inventory:', response.data.message);
         }
@@ -33,10 +30,15 @@ export default function Inventory() {
       }
     };
 
-    // Call the function to fetch the inventory when the component mounts
     fetchInventory();
-  }, []); // Adding vendorEmail to the dependency array
+  }, []);
 
+  const categories = [
+    'All',
+    ...(Array.isArray(inventoryData)
+      ? [...new Set(inventoryData.map((item) => item.category))]
+      : []),
+  ];
   // Filtered Items based on Search Query and Selected Category
   const filteredItems = inventoryData.filter((item) => {
     const query = searchQuery.toLowerCase();
