@@ -12,11 +12,11 @@ export default function Inventory() {
       const vendoremail = localStorage.getItem('vendoremail');
       try {
         const response = await axios.get(
-          `https://superbill-api.vercel.app/fetchinventory/vendoremail=${vendoremail}`
+          `https://superbill-api.vercel.app/fetchinventory?vendoremail=${vendoremail}`
         );
+        console.log(response.data); // Check the structure of the response
         if (response.data.success) {
           const fetchedData = response.data.inventory;
-          // Check if fetchedData is an array
           if (Array.isArray(fetchedData)) {
             setInventoryData(fetchedData);
           } else {
@@ -29,10 +29,9 @@ export default function Inventory() {
         console.error('Error fetching inventory:', error);
       }
     };
-
     fetchInventory();
   }, []);
-
+  // Empty dependency array to run only once
   const categories = [
     'All',
     ...(Array.isArray(inventoryData)
@@ -44,13 +43,13 @@ export default function Inventory() {
     const query = searchQuery.toLowerCase();
 
     const matchesSearch =
-      (item.productName && item.productName.toLowerCase().includes(query)) || // Ensure name is defined
-      (item.productId && item.productId.toString().includes(query)) || // Ensure id is defined and convert to string
-      (item.category && item.category.toLowerCase().includes(query)) || // Ensure category is defined
-      (item.stockQuantity && item.stockQuantity.toString().includes(query)) || // Ensure stockCount is defined
-      (item.costPrice && item.costPrice.toString().includes(query)) || // Ensure buyingPrice is defined
-      (item.sellingPrice && item.sellingPrice.toString().includes(query)) || // Ensure sellingPrice is defined
-      (item.gstRate && item.gstRate.toString().includes(query)); // Ensure gstPercentage is defined
+      (item.productName && item.productName.toLowerCase().includes(query)) ||
+      (item.productId && item.productId.toString().includes(query)) ||
+      (item.category && item.category.toLowerCase().includes(query)) ||
+      (item.stockQuantity && item.stockQuantity.toString().includes(query)) ||
+      (item.costPrice && item.costPrice.toString().includes(query)) ||
+      (item.sellingPrice && item.sellingPrice.toString().includes(query)) ||
+      (item.gstRate && item.gstRate.toString().includes(query));
 
     const matchesCategory =
       selectedCategory === 'All' ||
